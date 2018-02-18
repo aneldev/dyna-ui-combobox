@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home has expected content with deep render 1`] = `
+<DynaFieldWrapper
+  className="dyna-combobox"
+  color="WHITE_BLACK"
+  footer={null}
+  inputElementSelector="select"
+  isLoading={null}
+  label="Currency"
+  mode="EDIT"
+  onFocus={[Function]}
+  required={null}
+  size="MEDIUM"
+  style="INLINE_ROUNDED"
+  validationMessage={null}
+>
+  <select
+    onChange={[Function]}
+    value="eur"
+  >
+    <option
+      key="0"
+      value="eur"
+    >
+      Euro
+    </option>
+    <option
+      key="1"
+      value="usd"
+    >
+      US Dollar
+    </option>
+    <option
+      key="2"
+      value="aud"
+    >
+      Australian Dollar
+    </option>
+    <option
+      key="3"
+      value="gbp"
+    >
+      British Pound
+    </option>
+  </select>
+</DynaFieldWrapper>
+`;
