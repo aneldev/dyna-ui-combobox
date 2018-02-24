@@ -1278,7 +1278,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, ".dyna-combobox .dyna-ui-field-wrapper-container {\n  padding: 0 10px 0 0 !important;\n}\n.dyna-combobox.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-XSMALL select {\n  padding: 9px;\n}\n.dyna-combobox.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-SMALL select {\n  padding: 9px;\n}\n.dyna-combobox.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-MEDIUM select {\n  padding: 16px;\n}\n.dyna-combobox.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-LARGE select {\n  padding: 20px;\n  font-size: 20px;\n}\n.dyna-combobox select {\n  border: 0;\n  cursor: pointer;\n  background-color: transparent;\n}\n.dyna-combobox select:focus {\n  outline: none;\n}\n", ""]);
+exports.push([module.i, ".dyna-combobox .dyna-ui-label {\n  cursor: default;\n}\n.dyna-combobox .dyna-ui-field-wrapper-container {\n  padding: 0 10px 0 0 !important;\n}\n.dyna-combobox.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-XSMALL select {\n  padding: 9px;\n}\n.dyna-combobox.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-SMALL select {\n  padding: 9px;\n}\n.dyna-combobox.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-MEDIUM select {\n  padding: 16px;\n}\n.dyna-combobox.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-LARGE select {\n  padding: 20px;\n  font-size: 20px;\n}\n.dyna-combobox select {\n  border: 0;\n  cursor: pointer;\n  background-color: transparent;\n}\n.dyna-combobox select:focus {\n  outline: none;\n}\n", ""]);
 
 // exports
 
