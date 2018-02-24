@@ -29,7 +29,6 @@
   "license": "MIT",
   "dependencies": {
     "dyna-highlight-text": "^1.1.3",
-    "dyna-ui-autocomplete": "^2.2.3",
     "dyna-ui-field-wrapper": "^1.6.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
