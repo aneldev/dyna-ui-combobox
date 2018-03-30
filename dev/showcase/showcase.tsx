@@ -8,9 +8,8 @@ import {IDynaComboBoxOption} from "../../src/DynaComboBox";
 require('./showcase.less');
 
 export default {
-  logo: <Logo/>,
+  logo: <Logo />,
   views: [
-
     {
       slug: 'intro',
       faIconName: 'circle-o-notch',
@@ -22,7 +21,6 @@ export default {
         </div>
       ),
     },
-
     {
       slug: 'sizes',
       faIconName: 'flask',
@@ -106,7 +104,6 @@ export default {
         },
       ]
     },
-
     {
       slug: 'the-end',
       title: 'the end',

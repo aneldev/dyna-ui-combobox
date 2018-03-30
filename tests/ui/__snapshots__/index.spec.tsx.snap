@@ -18,7 +18,7 @@ exports[`Home has expected content with deep render 1`] = `
   <select
     onChange={[Function]}
     value="eur"
-  >
+>
     <option
       key="0"
       value="eur"
