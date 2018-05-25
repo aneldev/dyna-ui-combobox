@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("dyna-ui-field-wrapper"), require("react"));
+		module.exports = factory(require("dyna-ui-field-wrapper"), require("react"), require("platform"));
 	else if(typeof define === 'function' && define.amd)
-		define("dyna-ui-combobox", ["dyna-ui-field-wrapper", "react"], factory);
+		define("dyna-ui-combobox", ["dyna-ui-field-wrapper", "react", "platform"], factory);
 	else if(typeof exports === 'object')
-		exports["dyna-ui-combobox"] = factory(require("dyna-ui-field-wrapper"), require("react"));
+		exports["dyna-ui-combobox"] = factory(require("dyna-ui-field-wrapper"), require("react"), require("platform"));
 	else
-		root["dyna-ui-combobox"] = factory(root["dyna-ui-field-wrapper"], root["react"]);
-})(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE_0__, __WEBPACK_EXTERNAL_MODULE_4__) {
+		root["dyna-ui-combobox"] = factory(root["dyna-ui-field-wrapper"], root["react"], root["platform"]);
+})(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE_0__, __WEBPACK_EXTERNAL_MODULE_4__, __WEBPACK_EXTERNAL_MODULE_5__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -119,25 +119,39 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(4);
+var platform = __webpack_require__(5);
 var dyna_ui_field_wrapper_1 = __webpack_require__(0);
-__webpack_require__(5);
+__webpack_require__(6);
 var DynaComboBox = /** @class */ (function (_super) {
     __extends(DynaComboBox, _super);
     function DynaComboBox() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    Object.defineProperty(DynaComboBox.prototype, "isMacChromeSafari", {
+        get: function () {
+            return platform.os.family === "OS X" && (platform.name === "Chrome" || platform.name === "Safari");
+        },
+        enumerable: true,
+        configurable: true
+    });
     DynaComboBox.prototype.handleChange = function (event) {
         var _a = this.props, name = _a.name, onChange = _a.onChange;
         onChange(name, event.target.value);
     };
     DynaComboBox.prototype.render = function () {
-        var _a = this.props, label = _a.label, mode = _a.mode, style = _a.style, color = _a.color, size = _a.size, options = _a.options, value = _a.value;
-        return (React.createElement(dyna_ui_field_wrapper_1.DynaFieldWrapper, { className: "dyna-combobox", mode: mode, style: style, color: color, size: size, label: label, inputElementSelector: "select" },
+        var _a = this.props, userClassName = _a.className, label = _a.label, mode = _a.mode, style = _a.style, color = _a.color, size = _a.size, options = _a.options, value = _a.value;
+        var className = [
+            "dyna-combobox",
+            userClassName,
+            this.isMacChromeSafari ? "is-mac-chrome-safari" : "",
+        ].join(' ').trim();
+        return (React.createElement(dyna_ui_field_wrapper_1.DynaFieldWrapper, { className: className, mode: mode, style: style, color: color, size: size, label: label, inputElementSelector: "select" },
             React.createElement("select", { value: value || '', onChange: this.handleChange.bind(this) }, options.map(function (option, index) {
                 return (React.createElement("option", { key: index, value: option.value }, option.label));
             }))));
     };
     DynaComboBox.defaultProps = {
+        className: "",
         name: null,
         label: null,
         mode: dyna_ui_field_wrapper_1.EMode.EDIT,
@@ -161,12 +175,18 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_4__;
 
 /***/ }),
 /* 5 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_5__;
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(6);
+var content = __webpack_require__(7);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -174,7 +194,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(8)(content, options);
+var update = __webpack_require__(9)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -191,21 +211,21 @@ if(false) {
 }
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(7)(false);
+exports = module.exports = __webpack_require__(8)(false);
 // imports
 
 
 // module
-exports.push([module.i, ".dyna-combobox .dyna-ui-label {\n  cursor: default;\n}\n.dyna-combobox .dyna-ui-field-wrapper-container {\n  padding: 0 10px 0 0 !important;\n}\n.dyna-combobox.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-XSMALL select {\n  padding: 9px;\n}\n.dyna-combobox.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-SMALL select {\n  padding: 9px;\n}\n.dyna-combobox.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-MEDIUM select {\n  padding: 16px;\n}\n.dyna-combobox.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-LARGE select {\n  padding: 20px;\n  font-size: 20px;\n}\n.dyna-combobox select {\n  border: 0;\n  cursor: pointer;\n  background-color: transparent;\n}\n.dyna-combobox select:focus {\n  outline: none;\n}\n", ""]);
+exports.push([module.i, ".dyna-combobox .dyna-ui-label {\n  cursor: default;\n}\n.dyna-combobox .dyna-ui-field-wrapper-container {\n  padding: 0 10px 0 0 !important;\n}\n.dyna-combobox.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-XSMALL select {\n  padding: 9px;\n}\n.dyna-combobox.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-SMALL select {\n  padding: 9px;\n}\n.dyna-combobox.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-MEDIUM select {\n  padding: 16px;\n}\n.dyna-combobox.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-LARGE select {\n  padding: 20px;\n  font-size: 20px;\n}\n.dyna-combobox.is-mac-chrome-safari.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-XSMALL select {\n  padding: 0;\n  margin: 9px 0;\n}\n.dyna-combobox.is-mac-chrome-safari.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-SMALL select {\n  padding: 0;\n  margin: 9px 0;\n}\n.dyna-combobox.is-mac-chrome-safari.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-MEDIUM select {\n  padding: 0;\n  margin: 16px 0;\n}\n.dyna-combobox.is-mac-chrome-safari.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-LARGE select {\n  padding: 0;\n  margin: 20px 0;\n}\n.dyna-combobox select {\n  border: 0;\n  cursor: pointer;\n  background-color: transparent;\n}\n.dyna-combobox select:focus {\n  outline: none;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -287,7 +307,7 @@ function toComment(sourceMap) {
 }
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -333,7 +353,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(9);
+var	fixUrls = __webpack_require__(10);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -646,7 +666,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

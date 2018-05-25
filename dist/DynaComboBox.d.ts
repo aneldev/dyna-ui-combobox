@@ -2,6 +2,7 @@ import * as React from "react";
 import { EMode, EColor, EStyle, ESize } from "dyna-ui-field-wrapper";
 import "./dyna-combobox.less";
 export interface IDynaComboBoxProps {
+    className?: string;
     name: string;
     label?: JSX.Element | string;
     mode?: EMode;
@@ -18,6 +19,7 @@ export interface IDynaComboBoxOption {
 }
 export declare class DynaComboBox extends React.Component<IDynaComboBoxProps> {
     static defaultProps: IDynaComboBoxProps;
+    private readonly isMacChromeSafari;
     private handleChange(event);
     render(): JSX.Element;
 }
