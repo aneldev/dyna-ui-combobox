@@ -1,10 +1,12 @@
 import * as React from "react";
+import * as platform from "platform";
 
 import {EMode, EColor, EStyle, ESize, DynaFieldWrapper} from "dyna-ui-field-wrapper";
 
 import "./dyna-combobox.less";
 
 export interface IDynaComboBoxProps {
+  className?: string;
   name: string;
   label?: JSX.Element | string;
   mode?: EMode,
@@ -23,6 +25,7 @@ export interface IDynaComboBoxOption {
 
 export class DynaComboBox extends React.Component<IDynaComboBoxProps> {
   static defaultProps: IDynaComboBoxProps = {
+    className: "",
     name: null,
     label: null,
     mode: EMode.EDIT,
@@ -34,6 +37,10 @@ export class DynaComboBox extends React.Component<IDynaComboBoxProps> {
     onChange: (name: string, value: string) => undefined,
   };
 
+  private get isMacChromeSafari(): boolean {
+    return platform.os.family === "OS X" && (platform.name === "Chrome" || platform.name === "Safari");
+  }
+
   private handleChange(event: any): void {
     const {name, onChange} = this.props;
     onChange(name, event.target.value);
@@ -41,6 +48,7 @@ export class DynaComboBox extends React.Component<IDynaComboBoxProps> {
 
   public render(): JSX.Element {
     const {
+      className: userClassName,
       label,
       mode,
       style, color, size,
@@ -48,9 +56,15 @@ export class DynaComboBox extends React.Component<IDynaComboBoxProps> {
       value,
     } = this.props;
 
+    const className: string = [
+      "dyna-combobox",
+      userClassName,
+      this.isMacChromeSafari ? "is-mac-chrome-safari" : "",
+    ].join(' ').trim();
+
     return (
       <DynaFieldWrapper
-        className="dyna-combobox"
+        className={className}
         mode={mode}
         style={style}
         color={color}
