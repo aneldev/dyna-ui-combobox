@@ -4,11 +4,13 @@ import {DynaComboBox, EColor, ESize, EStyle, IDynaComboBoxProps} from "../../src
 import {faIcon, IShowcase} from "dyna-showcase";
 import {Logo} from "../logo";
 import {IDynaComboBoxOption} from "../../src/DynaComboBox";
+import {IShowcaseViewProps} from "dyna-showcase/dist/interfaces";
+import {EMode} from "dyna-ui-field-wrapper";
 
 require('./showcase.less');
 
 export default {
-  logo: <Logo />,
+  logo: <Logo/>,
   views: [
     {
       slug: 'intro',
@@ -22,15 +24,17 @@ export default {
       ),
     },
     {
-      slug: 'sizes',
+      slug: 'default',
       faIconName: 'flask',
       title: 'rounded - white/black - sizes',
       center: true,
       component: (() => {
 
         interface IMyAppProps {
-          color?: EColor,
-          size?: ESize,
+          mode?: EMode;
+          style?: EStyle;
+          color?: EColor;
+          size?: ESize;
         }
 
         interface IMyAppState {
@@ -59,9 +63,11 @@ export default {
           }
 
           public render(): JSX.Element {
-            const {size, color} = this.props;
+            const {mode, style, size, color} = this.props;
             return (
               <DynaComboBox
+                mode={mode}
+                style={style}
                 name="currency"
                 label="Currency"
                 size={size}
@@ -77,7 +83,32 @@ export default {
         return <MyApp/>
 
       })(),
-      props: [
+      props: (() => {
+        const props: Array<IShowcaseViewProps> = [];
+
+        Object.keys(EStyle).forEach((style: EStyle) => {
+          Object.keys(ESize).forEach((size: ESize) => {
+            Object.keys(EColor).forEach((color: EColor) => {
+              Object.keys(EMode).forEach((mode: EMode) => {
+                const title: string = `${mode} ${style} ${size.toLowerCase()} ${color.toLowerCase()}`.replace(/_/g, '-');
+                props.push({
+                  slug: title.replace(/ /g, '-'),
+                  title,
+                  props: {
+                    mode,
+                    style,
+                    size,
+                    color,
+                  },
+                })
+              });
+            });
+          });
+        });
+
+        return props;
+      })(),
+      props2: [
         {
           slug: 'small',
           title: 'small',

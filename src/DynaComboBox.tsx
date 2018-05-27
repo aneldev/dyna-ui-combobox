@@ -3,7 +3,7 @@ import * as platform from "platform";
 
 import {EMode, EColor, EStyle, ESize, DynaFieldWrapper} from "dyna-ui-field-wrapper";
 
-import "./dyna-combobox.less";
+import "./DynaComboBox.less";
 
 export interface IDynaComboBoxProps {
   className?: string;
