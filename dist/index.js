@@ -200,8 +200,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js??ref--4-2!../node_modules/less-loader/dist/cjs.js!./dyna-combobox.less", function() {
-			var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js??ref--4-2!../node_modules/less-loader/dist/cjs.js!./dyna-combobox.less");
+		module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js??ref--4-2!../node_modules/less-loader/dist/cjs.js!./DynaComboBox.less", function() {
+			var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js??ref--4-2!../node_modules/less-loader/dist/cjs.js!./DynaComboBox.less");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -219,7 +219,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, ".dyna-combobox .dyna-ui-label {\n  cursor: default;\n}\n.dyna-combobox .dyna-ui-field-wrapper-container {\n  padding: 0 10px 0 0 !important;\n}\n.dyna-combobox.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-XSMALL select {\n  padding: 9px;\n}\n.dyna-combobox.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-SMALL select {\n  padding: 9px;\n}\n.dyna-combobox.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-MEDIUM select {\n  padding: 16px;\n}\n.dyna-combobox.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-LARGE select {\n  padding: 20px;\n  font-size: 20px;\n}\n.dyna-combobox.is-mac-chrome-safari.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-XSMALL select {\n  padding: 0;\n  margin: 9px 0;\n}\n.dyna-combobox.is-mac-chrome-safari.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-SMALL select {\n  padding: 0;\n  margin: 9px 0;\n}\n.dyna-combobox.is-mac-chrome-safari.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-MEDIUM select {\n  padding: 0;\n  margin: 16px 0;\n}\n.dyna-combobox.is-mac-chrome-safari.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-LARGE select {\n  padding: 0;\n  margin: 20px 0;\n}\n.dyna-combobox select {\n  border: 0;\n  cursor: pointer;\n  background-color: transparent;\n}\n.dyna-combobox select:focus {\n  outline: none;\n}\n", ""]);
+exports.push([module.i, ".dyna-combobox .dyna-ui-label {\n  cursor: default !important;\n}\n.dyna-combobox .dyna-ui-label label {\n  cursor: default !important;\n}\n.dyna-combobox .dyna-ui-field-wrapper-container {\n  padding: 0 10px 0 0 !important;\n  cursor: default !important;\n}\n.dyna-combobox.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-XSMALL select {\n  padding: 9px;\n}\n.dyna-combobox.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-SMALL select {\n  padding: 9px;\n}\n.dyna-combobox.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-MEDIUM select {\n  padding: 16px;\n}\n.dyna-combobox.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-LARGE select {\n  padding: 20px;\n  font-size: 20px;\n}\n.dyna-combobox.is-mac-chrome-safari.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-XSMALL select {\n  padding: 0;\n  margin: 9px 0;\n}\n.dyna-combobox.is-mac-chrome-safari.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-SMALL select {\n  padding: 0;\n  margin: 9px 0;\n}\n.dyna-combobox.is-mac-chrome-safari.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-MEDIUM select {\n  padding: 0;\n  margin: 16px 0;\n}\n.dyna-combobox.is-mac-chrome-safari.dyna-ui-field-wrapper.dyna-ui-field-wrapper--size-LARGE select {\n  padding: 0;\n  margin: 20px 0;\n}\n.dyna-combobox select {\n  border: 0;\n  cursor: pointer;\n  background-color: transparent;\n}\n.dyna-combobox select:focus {\n  outline: none;\n}\n", ""]);
 
 // exports
 

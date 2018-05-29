@@ -1,6 +1,6 @@
 import * as React from "react";
 import { EMode, EColor, EStyle, ESize } from "dyna-ui-field-wrapper";
-import "./dyna-combobox.less";
+import "./DynaComboBox.less";
 export interface IDynaComboBoxProps {
     className?: string;
     name: string;
