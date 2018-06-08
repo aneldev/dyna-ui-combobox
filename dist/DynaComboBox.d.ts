@@ -20,6 +20,6 @@ export interface IDynaComboBoxOption {
 export declare class DynaComboBox extends React.Component<IDynaComboBoxProps> {
     static defaultProps: IDynaComboBoxProps;
     private readonly isMacChromeSafari;
-    private handleChange(event);
+    private handleChange;
     render(): JSX.Element;
 }
